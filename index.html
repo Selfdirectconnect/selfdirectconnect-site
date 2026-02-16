@@ -1,45 +1,290 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>SelfDirectConnect</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            text-align: center;
-            padding: 60px;
-        }
-        h1 {
-            color: #1f2937;
-            font-size: 40px;
-        }
-        p {
-            font-size: 18px;
-            color: #4b5563;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SelfDirectConnect</title>
+  <meta name="description" content="Helping families navigate Self Direction services with transparency, accountability, and informed choice." />
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --brand:#1d4ed8;
+      --brand2:#2563eb;
+      --border:#e5e7eb;
+      --shadow: 0 12px 30px rgba(17,24,39,.10);
+      --radius: 18px;
+      --max: 1040px;
+      --pad: 22px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1000px 500px at 50% 0%, rgba(37,99,235,.12), transparent 55%), var(--bg);
+    }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 40px 18px 70px; }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:30px;
+    }
+    .logo{
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:18px;
+    }
+    .badge{
+      font-size:12px;
+      color:var(--muted);
+      background: rgba(17,24,39,.06);
+      border:1px solid rgba(17,24,39,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .hero{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding: 42px;
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0;
+      font-size:16px;
+      color:var(--muted);
+      max-width: 70ch;
+    }
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      padding:12px 16px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text);
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btnPrimary{
+      background: linear-gradient(180deg, var(--brand2), var(--brand));
+      border-color: rgba(29,78,216,.35);
+      color:#fff;
+    }
+    .btnPrimary:hover{ filter:brightness(1.02); text-decoration:none; }
+    .btn:hover{ text-decoration:none; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: 0 10px 24px rgba(17,24,39,.07);
+      padding: var(--pad);
+    }
+    .card h2{
+      margin:0 0 10px 0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+    .list{
+      margin:12px 0 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+    }
+    .divider{ height:1px; background:var(--border); margin:18px 0; }
+    .formRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    input[type="email"]{
+      flex: 1 1 260px;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      outline:none;
+      font-size:14px;
+      background:#fff;
+    }
+    input[type="email"]:focus{
+      border-color: rgba(37,99,235,.55);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+    }
+    .note{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+    }
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    @media (max-width: 860px){
+      h1{ font-size:34px; }
+      .hero{ padding:28px; }
+      .grid{ grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo">SelfDirectConnect</div>
+      <div class="badge">Public launch in progress</div>
+    </div>
 
-<h1>SelfDirectConnect</h1>
-<p>
-Helping families navigate Self Direction services with transparency, accountability, and informed choice.
-</p>
+    <div class="hero">
+      <h1>Clearer choices for Self Direction services</h1>
+      <p class="sub">
+        Helping families navigate Self Direction services with transparency, accountability, and informed choice.
+      </p>
 
-<a href="#" class="button">Coming Soon</a>
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="#interest">Join the interest list</a>
+        <a class="btn" href="#how">How it will work</a>
+        <a class="btn" href="#brokers">Brokers and providers</a>
+      </div>
 
+      <div class="grid">
+        <div class="card" id="how">
+          <h2>How it will work</h2>
+          <p>
+            SelfDirectConnect is being designed as a structured, moderated platform that helps families compare services
+            and make informed decisions while protecting fairness and privacy.
+          </p>
+          <ul class="list">
+            <li>Families will be able to find resources and understand what to look for</li>
+            <li>Reviews and ratings will follow clear rules and moderation standards</li>
+            <li>Brokers and providers will be invited to opt in before public listing</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h2>Moderation first</h2>
+          <p>
+            The platform will not publish broker profiles or feedback without an opt in process and moderation safeguards.
+            This is intentional to reduce misinformation, defamation risk, and privacy issues.
+          </p>
+        </div>
+
+        <div class="card" id="interest">
+          <h2>Get updates</h2>
+          <p>
+            Leave your email and choose your role. You will receive launch updates and early access options.
+          </p>
+
+          <form class="formRow" onsubmit="return handleSignup(event)">
+            <input id="email" type="email" placeholder="Email address" required />
+            <button class="btn btnPrimary" type="submit">Notify me</button>
+          </form>
+
+          <div class="note" id="signupNote">
+            This form currently stores nothing. Next step is connecting it to a simple collection method.
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>Contact</h2>
+          <p>
+            Email: <a href="mailto:selfdirectconnect@outlook.com">selfdirectconnect@outlook.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:18px;">
+        <div class="card">
+          <h2>What families can expect</h2>
+          <ul class="list">
+            <li>Plain language guidance on Self Direction and service selection</li>
+            <li>Tools and checklists to support better decision making</li>
+            <li>A safer approach to reviews that reduces harm and improves quality</li>
+          </ul>
+        </div>
+        <div class="card" id="brokers">
+          <h2>Brokers and providers</h2>
+          <p>
+            We plan to invite brokers and providers to participate with a clear opt in process and a fair profile structure.
+          </p>
+          <ul class="list">
+            <li>Opt in listing before any public visibility</li>
+            <li>Profile standards and verification steps</li>
+            <li>Clear review rules and dispute process</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© <span id="year"></span> SelfDirectConnect</div>
+        <div class="links">
+          <a href="#" onclick="alert('We will add Privacy Policy soon.'); return false;">Privacy</a>
+          <a href="#" onclick="alert('We will add Terms soon.'); return false;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function handleSignup(e){
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const note = document.getElementById("signupNote");
+
+      if(!email){
+        note.textContent = "Please enter a valid email.";
+        return false;
+      }
+
+      note.textContent = "Saved locally for now. Next step is connecting this to a real list.";
+      document.getElementById("email").value = "";
+      return false;
+    }
+  </script>
 </body>
 </html>
