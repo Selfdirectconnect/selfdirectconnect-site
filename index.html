@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SelfDirectConnect</title>
-  <meta name="description" content="Helping families navigate Self Direction services with transparency, accountability, and informed choice." />
+  <meta name="description" content="A centralized resource and professional connection platform for families navigating Self Direction and OPWDD services, and for Support Brokers building visibility and credibility." />
 
   <style>
     :root{
@@ -30,12 +30,13 @@
     a{ color:var(--brand); text-decoration:none; }
     a:hover{ text-decoration:underline; }
     .wrap{ max-width:var(--max); margin:0 auto; padding: 40px 18px 70px; }
+
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:30px;
+      margin-bottom:18px;
     }
     .logo{
       font-weight:800;
@@ -51,6 +52,30 @@
       border-radius:999px;
       white-space:nowrap;
     }
+
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.8);
+      border:1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(17,24,39,.06);
+    }
+    .nav a{
+      font-size:14px;
+      color:var(--text);
+      padding:8px 10px;
+      border-radius: 10px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      background: rgba(17,24,39,.04);
+      text-decoration:none;
+    }
+
     .hero{
       background:var(--card);
       border:1px solid var(--border);
@@ -68,7 +93,7 @@
       margin:0;
       font-size:16px;
       color:var(--muted);
-      max-width: 70ch;
+      max-width: 80ch;
     }
     .ctaRow{
       display:flex;
@@ -96,7 +121,6 @@
     .btnPrimary:hover{ filter:brightness(1.02); text-decoration:none; }
     .btn:hover{ text-decoration:none; }
 
-    /* Accessible focus states */
     a:focus-visible,
     button:focus-visible,
     select:focus-visible,
@@ -138,7 +162,6 @@
     }
     .divider{ height:1px; background:var(--border); margin:18px 0; }
 
-    /* Signup selector (ADA friendly) */
     #signup fieldset{
       border:1px solid var(--border);
       border-radius:14px;
@@ -169,11 +192,6 @@
       color:var(--text);
     }
 
-    .note{
-      margin-top:10px;
-      font-size:12px;
-      color:var(--muted);
-    }
     .footer{
       margin-top:26px;
       color:var(--muted);
@@ -195,7 +213,6 @@
     }
   </style>
 
-  <!-- MailerLite Universal (add once) -->
   <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -203,8 +220,6 @@
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2118431');
   </script>
-  <!-- End MailerLite Universal -->
-
 </head>
 
 <body>
@@ -214,46 +229,65 @@
       <div class="badge">Public launch in progress</div>
     </div>
 
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="families.html">Families</a>
+      <a href="brokers.html">Brokers</a>
+      <a href="care-managers.html">Care managers</a>
+      <a href="advertisers.html">Advertisers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <div class="hero">
-      <h1>Clearer choices for Self Direction services</h1>
+      <h1>Centralized guidance and connection for Self Direction</h1>
       <p class="sub">
-        Helping families navigate Self Direction services with transparency, accountability, and informed choice.
+        SelfDirectConnect is a centralized resource and professional connection platform that helps families navigate Self Direction clearly and helps Support Brokers build credibility and visibility.
       </p>
 
       <div class="ctaRow">
         <a class="btn btnPrimary" href="#interest">Join the interest list</a>
-        <a class="btn" href="#how">How it will work</a>
-        <a class="btn" href="#brokers">Brokers and providers</a>
+        <a class="btn" href="families.html">For families</a>
+        <a class="btn" href="brokers.html">For brokers</a>
       </div>
 
       <div class="grid">
-        <div class="card" id="how">
-          <h2>How it will work</h2>
+        <div class="card" id="home-body">
+          <h2>Families</h2>
           <p>
-            SelfDirectConnect is being designed as a structured, moderated platform that helps families compare services
-            and make informed decisions while protecting fairness and privacy.
+            Plain language guidance, structured steps, and practical tools to help you understand Self Direction and make confident decisions.
           </p>
           <ul class="list">
-            <li>Families will be able to find resources and understand what to look for</li>
-            <li>Reviews and ratings will follow clear rules and moderation standards</li>
-            <li>Brokers and providers will be invited to opt in before public listing</li>
+            <li>Clear explanations of how Self Direction works</li>
+            <li>Guidance on what to look for in a Support Broker</li>
+            <li>Checklists and structured resources</li>
           </ul>
 
           <div class="divider"></div>
 
-          <h2>Moderation first</h2>
+          <h2>Support Brokers</h2>
           <p>
-            The platform will not publish broker profiles or feedback without an opt in process and moderation safeguards.
-            This is intentional to reduce misinformation, defamation risk, and privacy issues.
+            A professional space to build visibility and credibility, with structured profiles that help families understand your expertise.
+          </p>
+          <ul class="list">
+            <li>Opt in directory listing</li>
+            <li>Professional profile structure</li>
+            <li>Structured connection to families</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h2>Care managers and referral partners</h2>
+          <p>
+            A clean referral tool designed to replace informal lists and scattered information, while keeping the process structured and professional.
           </p>
         </div>
 
-        <!-- Replaces the old fake form -->
         <div class="card" id="interest">
           <section id="signup" aria-labelledby="signup-title">
             <h2 id="signup-title">Join the SelfDirectConnect community</h2>
             <p id="signup-help">
-              Choose your role to receive relevant updates, early access, and ecosystem announcements.
+              Choose your role to receive relevant updates and early access.
             </p>
 
             <fieldset aria-describedby="signup-help">
@@ -261,9 +295,9 @@
 
               <label for="sdc-role">Select your role</label>
               <select id="sdc-role" name="role">
-                <option value="family" selected>Parent or Family Member seeking support</option>
-                <option value="broker">Support Broker or Provider</option>
-                <option value="partner">Organization or Partner interested in collaboration</option>
+                <option value="family" selected>Parent or family member</option>
+                <option value="broker">Support Broker or provider</option>
+                <option value="advertiser">Advertiser or partner</option>
               </select>
             </fieldset>
 
@@ -275,7 +309,7 @@
               <div class="ml-embedded" data-form="dTK15U"></div>
             </div>
 
-            <div id="ml-partner" class="ml-role-panel" data-role="partner" hidden>
+            <div id="ml-advertiser" class="ml-role-panel" data-role="advertiser" hidden>
               <div class="ml-embedded" data-form="WQhQ0O"></div>
             </div>
 
@@ -285,19 +319,31 @@
                 JavaScript is disabled, so all signup options are shown below. Choose the form that matches your role.
               </p>
 
-              <h3>Parent or Family Member seeking support</h3>
+              <h3>Parent or family member</h3>
               <div class="ml-embedded" data-form="MmoDTy"></div>
 
-              <h3>Support Broker or Provider</h3>
+              <h3>Support Broker or provider</h3>
               <div class="ml-embedded" data-form="dTK15U"></div>
 
-              <h3>Organization or Partner interested in collaboration</h3>
+              <h3>Advertiser or partner</h3>
               <div class="ml-embedded" data-form="WQhQ0O"></div>
             </noscript>
 
             <div class="divider"></div>
 
-            <h2>Contact</h2>
+            <h2>Trust and moderation</h2>
+            <p>
+              Moderation first is not a slogan. It is a safeguard.
+            </p>
+            <ul class="list">
+              <li>Profiles go live only after broker opt in</li>
+              <li>Reviews follow clear rules and a dispute process</li>
+              <li>Privacy and fairness are part of the platform design</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h2 id="contact">Contact</h2>
             <p>
               Email: <a href="mailto:selfdirectconnect@outlook.com">selfdirectconnect@outlook.com</a>
             </p>
@@ -307,22 +353,27 @@
 
       <div class="grid" style="margin-top:18px;">
         <div class="card">
-          <h2>What families can expect</h2>
-          <ul class="list">
-            <li>Plain language guidance on Self Direction and service selection</li>
-            <li>Tools and checklists to support better decision making</li>
-            <li>A safer approach to reviews that reduces harm and improves quality</li>
-          </ul>
-        </div>
-        <div class="card" id="brokers">
-          <h2>Brokers and providers</h2>
+          <h2>Advertisers and partners</h2>
           <p>
-            We plan to invite brokers and providers to participate with a clear opt in process and a fair profile structure.
+            Targeted reach to families and service professionals, brand safe placement, and launch phase options for partners aligned with the self direction ecosystem.
           </p>
           <ul class="list">
-            <li>Opt in listing before any public visibility</li>
-            <li>Profile standards and verification steps</li>
-            <li>Clear review rules and dispute process</li>
+            <li>Focused audience and relevant placement</li>
+            <li>Launch phase partnership options</li>
+            <li>Built for credibility and trust</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>What happens next</h2>
+          <p>
+            We are building the core structure first, then filling in the education and directory sections in phases.
+          </p>
+          <ul class="list">
+            <li>Page structure and navigation</li>
+            <li>Audience pages with clear explanations</li>
+            <li>Broker opt in onboarding approach</li>
+            <li>Launch phase growth through partnerships</li>
           </ul>
         </div>
       </div>
@@ -330,8 +381,8 @@
       <div class="footer">
         <div>© <span id="year"></span> SelfDirectConnect</div>
         <div class="links">
-          <a href="#" onclick="alert('We will add Privacy Policy soon.'); return false;">Privacy</a>
-          <a href="#" onclick="alert('We will add Terms soon.'); return false;">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </div>
       </div>
     </div>
