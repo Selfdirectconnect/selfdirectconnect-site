@@ -1,1 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How it works | SelfDirectConnect</title>
+  <meta name="description" content="How SelfDirectConnect works: centralized education, professional visibility for Support Brokers, and structured connection for families navigating Self Direction and OPWDD services." />
 
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --brand:#1d4ed8;
+      --brand2:#2563eb;
+      --border:#e5e7eb;
+      --shadow: 0 12px 30px rgba(17,24,39,.10);
+      --radius: 18px;
+      --max: 1040px;
+      --pad: 22px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1000px 500px at 50% 0%, rgba(37,99,235,.12), transparent 55%), var(--bg);
+    }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 40px 18px 70px; }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .logo{ font-weight:800; letter-spacing:.2px; font-size:18px; }
+    .badge{
+      font-size:12px;
+      color:var(--muted);
+      background: rgba(17,24,39,.06);
+      border:1px solid rgba(17,24,39,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,.8);
+      border:1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(17,24,39,.06);
+    }
+    .nav a{
+      font-size:14px;
+      color:var(--text);
+      padding:8px 10px;
+      border-radius: 10px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{ background: rgba(17,24,39,.04); text-decoration:none; }
+
+    .page{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding: 34px;
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+    h2{
+      margin:22px 0 10px 0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    p{ margin:0; color:var(--muted); line-height:1.6; }
+    .lead{ margin-top:8px; max-width: 85ch; }
+    .divider{ height:1px; background:var(--border); margin:18px 0; }
+    .list{
+      margin:12px 0 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    .card{
+      background: rgba(17,24,39,.02);
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .card h3{
+      margin:0 0 8px 0;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .card p{ font-size:14px; }
+    .callout{
+      margin-top:18px;
+      padding: 16px 18px;
+      border:1px solid rgba(29,78,216,.25);
+      background: rgba(37,99,235,.08);
+      border-radius: 16px;
+    }
+    .callout p{ color: var(--text); font-size:14px; }
+
+    .footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+    }
+    .links{ display:flex; flex-wrap:wrap; gap:12px; }
+    a:focus-visible{
+      outline: 3px solid rgba(37,99,235,.45);
+      outline-offset: 3px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns:1fr; }
+      h1{ font-size:30px; }
+      .page{ padding: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo">SelfDirectConnect</div>
+      <div class="badge">Public launch in progress</div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="families.html">Families</a>
+      <a href="brokers.html">Brokers</a>
+      <a href="care-managers.html">Care managers</a>
+      <a href="advertisers.html">Advertisers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="page">
+      <main>
+        <h1>How SelfDirectConnect works</h1>
+        <p class="lead">
+          SelfDirectConnect is a centralized resource and professional connection platform designed to simplify the Self Direction process for individuals with developmental disabilities and the families who support them.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>Why this platform exists</h2>
+        <p>
+          The Self Direction system is often fragmented. Families are expected to piece together information across multiple sources, while Support Brokers and referral professionals rely on informal networks to connect.
+          SelfDirectConnect organizes education and professional access in one place so people can move forward with clarity.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>For families</h3>
+            <p>
+              Clear explanations, structured guidance, and practical resources so you can understand Self Direction and make confident decisions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>For Support Brokers</h3>
+            <p>
+              Professional visibility tools and a structured directory so families can understand your expertise and find the right fit.
+            </p>
+          </div>
+          <div class="card">
+            <h3>For care managers and referral partners</h3>
+            <p>
+              A clean referral tool designed to replace scattered lists and word of mouth referrals with structured options.
+            </p>
+          </div>
+          <div class="card">
+            <h3>For advertisers and partners</h3>
+            <p>
+              Brand safe opportunities to reach a focused audience of families and service professionals within the Self Direction ecosystem.
+            </p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>What we provide</h2>
+        <ul class="list">
+          <li>Structured education on how Self Direction works, designed to reduce confusion and overwhelm</li>
+          <li>A searchable directory of Support Brokers built around professional profiles</li>
+          <li>A clear pathway for families to research, compare, and connect</li>
+          <li>A platform approach designed for trust, clarity, and responsible growth</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>How the platform works in practice</h2>
+        <ul class="list">
+          <li>Families use educational guides to understand the process and what to look for</li>
+          <li>Support Brokers opt in to create and maintain a professional presence</li>
+          <li>Families review broker profiles and make contact based on fit, needs, and location</li>
+          <li>Care managers reference structured options rather than informal lists</li>
+        </ul>
+
+        <div class="callout">
+          <p>
+            Trust and moderation are part of the platform design. Profiles go live only after broker opt in. Reviews follow clear rules and a dispute process.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Launch approach</h2>
+        <p>
+          SelfDirectConnect is launching in phases. The initial focus is building a clean, simple structure, validating engagement, and onboarding early Support Broker profiles.
+          As adoption grows, additional tools and features will be introduced based on community needs and platform performance.
+        </p>
+      </main>
+
+      <div class="footer">
+        <div>© <span id="year"></span> SelfDirectConnect</div>
+        <div class="links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
