@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Families | SelfDirectConnect</title>
+  <meta name="description" content="Guidance and structured resources for families navigating Self Direction and OPWDD services." />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --brand:#1d4ed8;
+      --border:#e5e7eb;
+      --shadow: 0 12px 30px rgba(17,24,39,.10);
+      --radius: 18px;
+      --max: 1040px;
+      --pad: 22px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1000px 500px at 50% 0%, rgba(37,99,235,.12), transparent 55%), var(--bg);
+    }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:40px 18px 70px; }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .logo{ font-weight:800; font-size:18px; }
+
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+      padding:10px 12px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:0 8px 18px rgba(17,24,39,.06);
+    }
+
+    .nav a{
+      font-size:14px;
+      color:var(--text);
+      padding:8px 10px;
+      border-radius:10px;
+    }
+
+    .nav a:hover{ background:rgba(17,24,39,.04); text-decoration:none; }
+
+    .page{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:34px;
+    }
+
+    h1{
+      margin:0 0 12px 0;
+      font-size:34px;
+      line-height:1.15;
+    }
+
+    h2{
+      margin:24px 0 10px 0;
+      font-size:18px;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .lead{ margin-top:8px; }
+
+    .list{
+      margin:12px 0 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .divider{ height:1px; background:var(--border); margin:20px 0; }
+
+    .callout{
+      margin-top:18px;
+      padding:16px 18px;
+      border:1px solid rgba(29,78,216,.25);
+      background:rgba(37,99,235,.08);
+      border-radius:16px;
+    }
+
+    .footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    @media (max-width: 860px){
+      h1{ font-size:28px; }
+      .page{ padding:26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo">SelfDirectConnect</div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="families.html">Families</a>
+      <a href="brokers.html">Brokers</a>
+      <a href="care-managers.html">Care managers</a>
+      <a href="advertisers.html">Advertisers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="page">
+      <main>
+        <h1>For families navigating Self Direction</h1>
+        <p class="lead">
+          Self Direction provides flexibility and control, but the process can feel overwhelming without clear structure.
+          SelfDirectConnect is designed to simplify that experience.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>What families often face</h2>
+        <ul class="list">
+          <li>Unclear explanations of how Self Direction works</li>
+          <li>Difficulty comparing Support Brokers</li>
+          <li>Overreliance on informal referrals and word of mouth</li>
+          <li>Uncertainty about what questions to ask</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>What SelfDirectConnect provides</h2>
+        <ul class="list">
+          <li>Plain language guidance about the Self Direction model</li>
+          <li>Structured information about the role of Support Brokers</li>
+          <li>A centralized directory built around professional profiles</li>
+          <li>A moderated framework designed for fairness and clarity</li>
+        </ul>
+
+        <div class="callout">
+          Families should not have to navigate Self Direction through scattered information.
+          The goal is clarity, structure, and informed choice.
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Next steps</h2>
+        <p>
+          Join the interest list on the homepage to receive updates as educational tools and broker profiles are added during the launch phase.
+        </p>
+      </main>
+
+      <div class="footer">
+        <div>© <span id="year"></span> SelfDirectConnect</div>
+        <div>
+          <a href="privacy.html">Privacy</a> |
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
