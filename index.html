@@ -213,6 +213,7 @@
     }
   </style>
 
+  <!-- MailerLite Universal Script (load once per page) -->
   <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -293,25 +294,15 @@
             <fieldset aria-describedby="signup-help">
               <legend>I am a</legend>
 
-              <label for="sdc-role">Select your role</label>
-              <select id="sdc-role" name="role">
-                <option value="family" selected>Parent or family member</option>
-                <option value="broker">Support Broker or provider</option>
+              <label for="roleSelect">Select your role</label>
+              <select id="roleSelect" name="role">
+                <option value="family" selected>Self advocate, parent or family member</option>
+                <option value="broker">Support broker or provider</option>
                 <option value="advertiser">Advertiser or partner</option>
               </select>
             </fieldset>
 
-            <div id="ml-family" class="ml-role-panel" data-role="family">
-              <div class="ml-embedded" data-form="MmoDTy"></div>
-            </div>
-
-            <div id="ml-broker" class="ml-role-panel" data-role="broker" hidden>
-              <div class="ml-embedded" data-form="dTK15U"></div>
-            </div>
-
-            <div id="ml-advertiser" class="ml-role-panel" data-role="advertiser" hidden>
-              <div class="ml-embedded" data-form="WQhQ0O"></div>
-            </div>
+            <div id="mlFormMount" style="margin-top:20px;"></div>
 
             <noscript>
               <div class="divider"></div>
@@ -319,10 +310,10 @@
                 JavaScript is disabled, so all signup options are shown below. Choose the form that matches your role.
               </p>
 
-              <h3>Parent or family member</h3>
-              <div class="ml-embedded" data-form="MmoDTy"></div>
+              <h3>Self advocate, parent or family member</h3>
+              <div class="ml-embedded" data-form="MW1xcO"></div>
 
-              <h3>Support Broker or provider</h3>
+              <h3>Support broker or provider</h3>
               <div class="ml-embedded" data-form="dTK15U"></div>
 
               <h3>Advertiser or partner</h3>
@@ -391,28 +382,29 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    (function () {
-      const roleSelect = document.getElementById('sdc-role');
-      const panels = Array.from(document.querySelectorAll('.ml-role-panel'));
-      if (!roleSelect || panels.length === 0) return;
+    const FORM_IDS = {
+      family: "MW1xcO",
+      broker: "dTK15U",
+      advertiser: "WQhQ0O"
+    };
 
-      function showRole(role) {
-        panels.forEach(panel => {
-          const isMatch = panel.getAttribute('data-role') === role;
-          if (isMatch) {
-            panel.removeAttribute('hidden');
-          } else {
-            panel.setAttribute('hidden', '');
-          }
-        });
+    const mount = document.getElementById("mlFormMount");
+    const roleSelect = document.getElementById("roleSelect");
+
+    function renderForm(role) {
+      const formId = FORM_IDS[role] || FORM_IDS.family;
+      mount.innerHTML = '<div class="ml-embedded" data-form="' + formId + '"></div>';
+      if (window.ml) {
+        ml("refresh");
       }
+    }
 
-      roleSelect.addEventListener('change', function () {
-        showRole(roleSelect.value);
+    if (roleSelect && mount) {
+      roleSelect.addEventListener("change", function () {
+        renderForm(roleSelect.value);
       });
-
-      showRole(roleSelect.value);
-    })();
+      renderForm(roleSelect.value);
+    }
   </script>
 </body>
 </html>
