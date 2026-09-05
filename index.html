@@ -1,687 +1,257 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SelfDirectConnect</title>
-  <meta name="description" content="A centralized resource and professional connection platform for families navigating Self Direction and OPWDD services, and for Support Brokers building visibility and credibility." />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SelfDirectConnect | Self Direction Guidance and Connections</title>
+  <meta name="description" content="SelfDirectConnect brings Self Direction education, practical resources, and professional connections together in one accessible place for individuals, families, Support Brokers, and referral partners.">
+  <meta name="theme-color" content="#063b36">
   <style>
     :root{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --text:#111827;
-      --muted:#4b5563;
-      --brand:#1d4ed8;
-      --brand2:#2563eb;
-      --border:#e5e7eb;
-      --shadow: 0 12px 30px rgba(17,24,39,.10);
-      --radius: 18px;
-      --max: 1040px;
-      --pad: 22px;
+      --navy:#09213d;
+      --green:#146b57;
+      --green-dark:#064a43;
+      --green-soft:#edf5f0;
+      --gold:#e6b65a;
+      --cream:#fbfaf7;
+      --white:#ffffff;
+      --text:#152238;
+      --muted:#5e6875;
+      --line:#dce4e0;
+      --shadow:0 18px 50px rgba(9,33,61,.12);
+      --radius:24px;
+      --max:1180px;
     }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--text);
-      background: radial-gradient(1000px 500px at 50% 0%, rgba(37,99,235,.12), transparent 55%), var(--bg);
-    }
-    a{ color:var(--brand); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 40px 18px 70px; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    img,svg{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 36px));margin:0 auto}
+    .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px 14px;z-index:999}
+    .skip:focus{left:12px}
+    header{background:rgba(255,255,255,.96);border-bottom:1px solid rgba(9,33,61,.08);position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
+    .header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--green-soft);color:var(--green);font-size:24px;font-weight:800}
+    .brand-name{font-family:Georgia,"Times New Roman",serif;font-size:27px;font-weight:700;letter-spacing:-.5px;color:var(--navy)}
+    .brand-name span{color:var(--green)}
+    .tagline{display:block;font-size:11px;color:#385267;letter-spacing:.1px;margin-top:-2px}
+    nav{display:flex;align-items:center;gap:24px;font-weight:650;font-size:14px}
+    nav a{padding:28px 0 24px;border-bottom:3px solid transparent}
+    nav a:hover,nav a:focus-visible{color:var(--green);border-color:var(--green)}
+    .nav-cta{background:var(--green);color:white!important;padding:11px 18px!important;border-radius:8px;border:0!important}
+    .nav-cta:hover{background:var(--green-dark)}
+    .menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 11px;font-size:18px}
 
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:18px;
-    }
-    .logo{
-      font-weight:800;
-      letter-spacing:.2px;
-      font-size:18px;
-    }
-    .badge{
-      font-size:12px;
-      color:var(--muted);
-      background: rgba(17,24,39,.06);
-      border:1px solid rgba(17,24,39,.08);
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
+    .hero{background:linear-gradient(115deg,#ffffff 0%,#f8faf8 48%,#e9f2ec 100%);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:650px;align-items:center}
+    .hero-copy{padding:72px 28px 72px 0}
+    .eyebrow{color:var(--green);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:14px}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy)}
+    h1{font-size:clamp(46px,6vw,76px);line-height:.98;letter-spacing:-2px;margin:0 0 24px;max-width:760px}
+    h1 .accent{color:var(--green)}
+    .hero-lead{font-size:18px;line-height:1.7;max-width:650px;margin:0 0 28px;color:#2d3c51}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:9px;border:1.5px solid var(--green);font-weight:750}
+    .btn-primary{background:var(--green);color:white}
+    .btn-primary:hover{background:var(--green-dark)}
+    .btn-secondary{background:#fff;color:var(--green)}
+    .hero-points{display:grid;grid-template-columns:repeat(3,1fr);max-width:620px;border-top:1px solid var(--line);padding-top:22px}
+    .point{padding:0 18px;border-right:1px solid var(--line);font-size:13px;font-weight:700}
+    .point:first-child{padding-left:0}.point:last-child{border-right:0}
+    .point strong{display:block;color:var(--green);font-size:20px;margin-bottom:4px}
 
-    .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:18px;
-      padding: 10px 12px;
-      background: rgba(255,255,255,.8);
-      border:1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(17,24,39,.06);
-    }
-    .nav a{
-      font-size:14px;
-      color:var(--text);
-      padding:8px 10px;
-      border-radius: 10px;
-      border:1px solid transparent;
-    }
-    .nav a:hover{
-      background: rgba(17,24,39,.04);
-      text-decoration:none;
-    }
+    .hero-art{height:100%;min-height:650px;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 70% 40%,#d6e6db 0 30%,transparent 31%),linear-gradient(145deg,#eaf3ed,#bcd6c8)}
+    .hero-art:before{content:"";position:absolute;inset:8% -18% 5% 10%;border:28px solid rgba(20,107,87,.78);border-radius:50%}
+    .people-card{position:relative;z-index:2;width:min(430px,78%);aspect-ratio:4/5;border-radius:48% 48% 18% 18%;background:linear-gradient(160deg,#f3dfc7,#d7ece2 48%,#779f8c);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden}
+    .people-card svg{width:86%;height:86%}
+    .quote-badge{position:absolute;z-index:3;right:8%;bottom:10%;width:210px;height:210px;border-radius:50%;background:var(--green-dark);border:4px solid var(--gold);color:#fff;display:grid;place-items:center;text-align:center;padding:25px;font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:1.25;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .quote-badge span{color:var(--gold);font-size:36px;line-height:1;display:block}
 
-    .hero{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding: 42px;
-    }
-    h1{
-      margin:0 0 10px 0;
-      font-size:42px;
-      line-height:1.1;
-      letter-spacing:-.6px;
-    }
-    .sub{
-      margin:0;
-      font-size:16px;
-      color:var(--muted);
-      max-width: 80ch;
-    }
-    .ctaRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:22px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:12px;
-      padding:12px 16px;
-      border:1px solid var(--border);
-      background:#fff;
-      color:var(--text);
-      font-weight:600;
-      cursor:pointer;
-    }
-    .btnPrimary{
-      background: linear-gradient(180deg, var(--brand2), var(--brand));
-      border-color: rgba(29,78,216,.35);
-      color:#fff;
-    }
-    .btnPrimary:hover{ filter:brightness(1.02); text-decoration:none; }
-    .btn:hover{ text-decoration:none; }
+    .benefits{background:linear-gradient(90deg,#063b36,#07544b);color:#fff;padding:38px 0}
+    .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .benefit{padding:0 28px;text-align:center;border-right:1px solid rgba(255,255,255,.25)}
+    .benefit:last-child{border-right:0}
+    .benefit-icon{font-size:30px;color:var(--gold);margin-bottom:10px}
+    .benefit h3{color:#fff;font-size:20px;margin:0 0 8px}
+    .benefit p{margin:0;font-size:14px;color:#edf7f4}
 
-    a:focus-visible,
-    button:focus-visible,
-    select:focus-visible,
-    input:focus-visible{
-      outline: 3px solid rgba(37,99,235,.45);
-      outline-offset: 3px;
-    }
+    .section{padding:82px 0}
+    .section-title{text-align:center;max-width:760px;margin:0 auto 52px}
+    .section-title h2{font-size:42px;margin:0 0 10px}
+    .section-title p{color:var(--muted);margin:0;font-size:17px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .step{text-align:center;padding:0 44px;position:relative}
+    .step:not(:last-child):after{content:"";position:absolute;right:0;top:30px;height:120px;width:1px;background:var(--line)}
+    .step-number{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#78a984;color:#fff;font-weight:800;margin:0 auto 14px}
+    .step-icon{font-size:44px;color:var(--green);margin-bottom:12px}
+    .step h3{font-family:inherit;color:var(--green-dark);font-size:20px;margin:0 0 8px}
+    .step p{margin:0;color:#344255}
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow: 0 10px 24px rgba(17,24,39,.07);
-      padding: var(--pad);
-    }
-    .card h2{
-      margin:0 0 10px 0;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.55;
-      font-size:14px;
-    }
-    .list{
-      margin:12px 0 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
-    .divider{ height:1px; background:var(--border); margin:18px 0; }
+    .about-strip{margin-top:62px;border:1px solid #c8d7cf;border-radius:16px;background:linear-gradient(90deg,#f1f6f2,#dcebe2);padding:28px 34px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .about-strip blockquote{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--green);font-size:25px;font-style:italic}
+    .about-strip p{margin:6px 0 0;color:#314154}
 
-    #signup fieldset{
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:14px;
-      margin-top:12px;
-      background: rgba(17,24,39,.02);
-    }
-    #signup legend{
-      font-weight:700;
-      padding:0 6px;
-    }
-    #signup label{
-      display:block;
-      font-size:14px;
-      color:var(--text);
-      margin-top:10px;
-      margin-bottom:6px;
-      font-weight:600;
-    }
-    #signup select{
-      width:100%;
-      max-width: 100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-size:14px;
-      color:var(--text);
-    }
+    .join{background:var(--navy);color:#fff;padding:68px 0}
+    .join-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:start}
+    .join h2{color:#fff;font-size:40px;margin:0 0 14px}
+    .join p{color:#d9e2ea;font-size:17px}
+    .join-list{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:13px}
+    .join-list li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:10px}
+    .form-shell{background:#fff;color:var(--text);border-radius:18px;padding:24px;box-shadow:0 16px 42px rgba(0,0,0,.2)}
+    .form-shell h3{font-family:inherit;font-size:21px;margin:0 0 6px}.form-shell p{font-size:14px;color:var(--muted);margin:0 0 15px}
+    .ml-embedded{min-height:120px}
 
-    .footer{
-      margin-top:26px;
-      color:var(--muted);
-      font-size:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:space-between;
+    footer{background:#063b36;color:#e8f1ef;padding:28px 0 34px}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+    .fine{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:12px;color:#c9dbd6}
+    :focus-visible{outline:3px solid #f1c665;outline-offset:3px}
+
+    @media (max-width:920px){
+      nav{display:none}.menu-btn{display:block}.header-inner{min-height:70px}.tagline{display:none}
+      .hero-grid{grid-template-columns:1fr}.hero-copy{padding:55px 0}.hero-art{min-height:480px}.hero-points{grid-template-columns:1fr;gap:10px;border-top:0}.point{border-right:0;padding:0}
+      .benefit-grid{grid-template-columns:1fr 1fr;gap:28px}.benefit:nth-child(2){border-right:0}
+      .steps{grid-template-columns:1fr;gap:38px}.step:not(:last-child):after{display:none}
+      .join-grid{grid-template-columns:1fr}.about-strip{align-items:flex-start;flex-direction:column}
     }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-    @media (max-width: 860px){
-      h1{ font-size:34px; }
-      .hero{ padding:28px; }
-      .grid{ grid-template-columns:1fr; }
+    @media (max-width:560px){
+      .brand-name{font-size:21px}.brand-mark{width:38px;height:38px}
+      h1{font-size:46px}.hero-art{min-height:410px}.quote-badge{width:150px;height:150px;font-size:15px;right:2%;bottom:5%;padding:18px}.quote-badge span{font-size:25px}
+      .benefit-grid{grid-template-columns:1fr}.benefit{border-right:0;border-bottom:1px solid rgba(255,255,255,.18);padding:0 10px 24px}.benefit:last-child{border-bottom:0;padding-bottom:0}
+      .section{padding:62px 0}.section-title h2,.join h2{font-size:34px}.step{padding:0 12px}
     }
   </style>
-
-  <!-- MailerLite Universal Script removed because we are using full HTML embed directly -->
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="logo">SelfDirectConnect</div>
-      <div class="badge">Public launch in progress</div>
-    </div>
-
-    <nav class="nav" aria-label="Primary">
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="SelfDirectConnect home">
+      <div class="brand-mark" aria-hidden="true">♡</div>
+      <div><div class="brand-name">Self<span>Direct</span>Connect</div><span class="tagline">Unlocking Independence, Empowering Choices</span></div>
+    </a>
+    <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="how-it-works.html">How it works</a>
+      <a href="how-it-works.html">How It Works</a>
       <a href="families.html">Families</a>
-      <a href="brokers.html">Brokers</a>
-      <a href="care-managers.html">Care managers</a>
-      <a href="advertisers.html">Advertisers</a>
-      <a href="#contact">Contact</a>
+      <a href="brokers.html">For Brokers</a>
+      <a href="#resources">Resources</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#join">Join Early Access</a>
     </nav>
+    <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+  </div>
+</header>
 
-    <div class="hero">
-      <h1>Centralized guidance and connection for <span class="nowrap">Self&nbsp;Direction</span></h1>
-      <p class="sub">
-        SelfDirectConnect is a centralized resource and professional connection platform that helps families navigate Self Direction clearly and helps Support Brokers build credibility and visibility.
-      </p>
-
-      <div class="ctaRow">
-        <a class="btn btnPrimary" href="#interest">Join the interest list</a>
-        <a class="btn" href="families.html">For families</a>
-        <a class="btn" href="brokers.html">For brokers</a>
-      </div>
-
-      <div class="grid">
-        <div class="card" id="home-body">
-          <h2>Families</h2>
-          <p>
-            Plain language guidance, structured steps, and practical tools to help you understand Self Direction and make confident decisions.
-          </p>
-          <ul class="list">
-            <li>Clear explanations of how Self Direction works</li>
-            <li>Guidance on what to look for in a Support Broker</li>
-            <li>Checklists and structured resources</li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <h2>Support Brokers</h2>
-          <p>
-            A professional space to build visibility and credibility, with structured profiles that help families understand your expertise.
-          </p>
-          <ul class="list">
-            <li>Opt in directory listing</li>
-            <li>Professional profile structure</li>
-            <li>Structured connection to families</li>
-          </ul>
-
-          <div class="divider"></div>
-
-          <h2>Care managers and referral partners</h2>
-          <p>
-            A clean referral tool designed to replace informal lists and scattered information, while keeping the process structured and professional.
-          </p>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Self Direction, made clearer</div>
+        <h1 id="hero-title">Right Support.<br>Stronger Futures.<br><span class="accent">More Independence.</span></h1>
+        <p class="hero-lead">SelfDirectConnect helps individuals with developmental disabilities and their families understand Self Direction, find practical resources, and connect with Support Brokers through one trusted, accessible platform.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#join">Join Early Access</a>
+          <a class="btn btn-secondary" href="families.html">Explore Family Resources</a>
         </div>
-
-        <div class="card" id="interest">
-          <section id="signup" aria-labelledby="signup-title">
-            <h2 id="signup-title">Join the SelfDirectConnect community</h2>
-            <p id="signup-help">
-              Choose your role to receive relevant updates and early access.
-            </p>
-
-            <!-- Role selector removed because we are using a single embedded form -->
-            <!-- If you want multiple forms later, we will create separate pages: families, brokers, advertisers -->
-
-            <div id="mlFormMount" style="margin-top:20px;">
-
-              <!-- MailerLite Embed START -->
-              <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1771331");</style>
-              <style type="text/css">
-              /* LOADER */
-              .ml-form-embedSubmitLoad {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-              }
-
-              .g-recaptcha {
-              transform: scale(1);
-              -webkit-transform: scale(1);
-              transform-origin: 0 0;
-              -webkit-transform-origin: 0 0;
-              height: ;
-              }
-
-              .sr-only {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: 0;
-                overflow: hidden;
-                clip: rect(0,0,0,0);
-                border: 0;
-              }
-
-              .ml-form-embedSubmitLoad:after {
-                content: " ";
-                display: block;
-                width: 11px;
-                height: 11px;
-                margin: 1px;
-                border-radius: 50%;
-                border: 4px solid #fff;
-              border-color: #ffffff #ffffff #ffffff transparent;
-              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-              }
-              @keyframes ml-form-embedSubmitLoad {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-              }
-                #mlb2-37279615.ml-form-embedContainer {
-                  box-sizing: border-box;
-                  display: table;
-                  margin: 0 auto;
-                  position: static;
-                  width: 100% !important;
-                }
-                #mlb2-37279615.ml-form-embedContainer h4,
-                #mlb2-37279615.ml-form-embedContainer p,
-                #mlb2-37279615.ml-form-embedContainer span,
-                #mlb2-37279615.ml-form-embedContainer button {
-                  text-transform: none !important;
-                  letter-spacing: normal !important;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper {
-                  background-color: #f6f6f6;
-                  border-width: 0px;
-                  border-color: transparent;
-                  border-radius: 4px;
-                  border-style: solid;
-                  box-sizing: border-box;
-                  display: inline-block !important;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                        }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-align-left { text-align: left; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-align-center { text-align: center; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-align-right { text-align: right; }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedHeader img {
-                  border-top-left-radius: 4px;
-                  border-top-right-radius: 4px;
-                  height: auto;
-                  margin: 0 auto !important;
-                  max-width: 100%;
-                  width: undefinedpx;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
-                  padding: 20px 20px 0 20px;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
-                  padding-bottom: 0;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
-                  text-align: left;
-                  margin: 0 0 20px 0;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
-                  color: #000000;
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 22px; /* changed from 40px */
-                  font-weight: 400;
-                  margin: 0 0 10px 0;
-                  text-align: left;
-                  word-break: break-word;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-                  color: #000000;
-                  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-                  font-size: 16px;
-                  font-weight: 400;
-                  line-height: 22px;
-                  margin: 0 0 10px 0;
-                  text-align: left;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
-                  color: #000000;
-                  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-                  font-size: 16px;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
-                  color: #000000;
-                  text-decoration: underline;
-                }
-
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
-                  text-align: left!important;
-                }
-
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
-                  margin-bottom: 5px;
-                  color: #333333;
-                  font-size: 16px;
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-weight: bold;
-                  display: inline-block;
-                  line-height: 22px;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
-                  margin: 0;
-                  width: 100%;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent {
-                  margin: 0 0 20px 0;
-                  width: 100%;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
-                  margin: 0 0 10px 0;
-                  width: 100%;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
-                  margin: 0;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-                  background-color: #ffffff !important;
-                  color: #333333 !important;
-                  border-color: #cccccc;
-                  border-radius: 4px !important;
-                  border-style: solid !important;
-                  border-width: 1px !important;
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 16px !important;
-                  height: auto;
-                  line-height: 21px !important;
-                  padding: 10px 10px !important;
-                  width: 100% !important;
-                  box-sizing: border-box !important;
-                  max-width: 100% !important;
-                }
-
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select {
-                  background-color: #ffffff !important;
-                  color: #333333 !important;
-                  border-color: #cccccc;
-                  border-radius: 4px !important;
-                  border-style: solid !important;
-                  border-width: 1px !important;
-                  font-family: Arial, Helvetica, sans-serif;
-                  font-size: 16px !important;
-                  line-height: 20px !important;
-                  margin-bottom: 0;
-                  margin-top: 0;
-                  padding: 10px 28px 10px 12px !important;
-                  width: 100% !important;
-                  box-sizing: border-box !important;
-                  max-width: 100% !important;
-                  height: auto;
-                  display: inline-block;
-                  vertical-align: middle;
-                  background: url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;
-                  -webkit-appearance: none;
-                  -moz-appearance: none;
-                  appearance: none;
-                }
-
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
-                  margin: 0 0 20px 0;
-                  float: left;
-                  width: 100%;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-                  background-color: #000000 !important;
-                  border: none !important;
-                  border-radius: 6px !important;
-                  box-shadow: none !important;
-                  color: #ffffff !important;
-                  cursor: pointer;
-                  font-family: Arial, Helvetica, sans-serif !important;
-                  font-size: 16px !important;
-                  font-weight: 700 !important;
-                  line-height: 21px !important;
-                  height: auto;
-                  padding: 10px !important;
-                  width: 100% !important;
-                  box-sizing: border-box !important;
-                }
-                #mlb2-37279615.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-                  background-color: #333333 !important;
-                }
-
-                @media only screen and (max-width: 400px){
-                  .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; }
-                }
-              </style>
-
-              <div id="mlb2-37279615" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37279615">
-                <div class="ml-form-align-center ">
-                  <div class="ml-form-embedWrapper embedForm">
-                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                      <div class="ml-form-embedContent" style=" ">
-                        <h4>Find the Right Support for Your Self&nbsp;Direction Journey</h4>
-                        <p>Get trusted resources, updates, and early access to support broker reviews and tools.</p>
-                      </div>
-
-                      <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2118431/forms/179674632805156707/subscribe" data-code="" method="post" target="_blank">
-                        <div class="ml-form-formContent">
-
-                          <div class="ml-form-fieldRow ">
-                            <div class="ml-field-group ml-field-first_name ml-validate-required">
-                              <label>First Name</label>
-                              <input aria-label="first_name" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[first_name]" placeholder="" autocomplete="">
-                            </div>
-                          </div>
-
-                          <div class="ml-form-fieldRow ">
-                            <div class="ml-field-group ml-field-last_name">
-                              <label>Last name</label>
-                              <input aria-label="last_name" type="text" class="form-control" data-inputmask="" name="fields[last_name]" placeholder="" autocomplete="family-name">
-                            </div>
-                          </div>
-
-                          <div class="ml-form-fieldRow ">
-                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                              <label>Email</label>
-                              <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="" autocomplete="email">
-                            </div>
-                          </div>
-
-                          <div class="ml-form-fieldRow ">
-                            <div class="ml-field-group ml-field-support_needed ml-validate-required">
-                              <label>Support Needed</label>
-                              <select class="custom-select" name="fields[support_needed]" aria-label="support_needed" aria-required="true">
-                                <option value="">-</option>
-                                <option>I am an Individual Managing My Own Self Direction</option>
-                                <option>I am a Family Seeking Services</option>
-                                <option>I am a Support Broker or Provider</option>
-                                <option>I need Help with OPWDD Self Direction</option>
-                                <option>I am Looking for a Support Broker</option>
-                                <option>I need Fiscal Intermediary Guidance</option>
-                                <option>I need Employment Support</option>
-                                <option>I have a General Question</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div class="ml-form-fieldRow ml-last-item">
-                            <div class="ml-field-group ml-field-phone">
-                              <label>Phone</label>
-                              <input aria-label="phone" type="text" class="form-control" data-inputmask="" name="fields[phone]" placeholder="" autocomplete="">
-                            </div>
-                          </div>
-
-                        </div>
-
-                        <input type="hidden" name="ml-submit" value="1">
-
-                        <div class="ml-form-embedSubmit">
-                          <button type="submit" class="primary">Get Connected</button>
-
-                          <button disabled="disabled" style="display: none;" type="button" class="loading">
-                            <div class="ml-form-embedSubmitLoad"></div>
-                            <span class="sr-only">Loading...</span>
-                          </button>
-                        </div>
-
-                        <input type="hidden" name="anticsrf" value="true">
-                      </form>
-                    </div>
-
-                    <div class="ml-form-successBody row-success" style="display: none">
-                      <div class="ml-form-successContent">
-                        <h4>Thank you!</h4>
-                        <p>You have successfully joined our subscriber list.</p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <script>
-                function ml_webform_success_37279615() {
-                  var $ = ml_jQuery || jQuery;
-                  $('.ml-subscribe-form-37279615 .row-success').show();
-                  $('.ml-subscribe-form-37279615 .row-form').hide();
-                }
-              </script>
-
-              <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-              <script>
-                fetch("https://assets.mailerlite.com/jsonp/2118431/forms/179674632805156707/takel")
-              </script>
-              <!-- MailerLite Embed END -->
-
-            </div>
-
-            <div class="divider"></div>
-
-            <h2>Trust and moderation</h2>
-            <p>
-              Moderation first is not a slogan. It is a safeguard.
-            </p>
-            <ul class="list">
-              <li>Profiles go live only after broker opt in</li>
-              <li>Reviews follow clear rules and a dispute process</li>
-              <li>Privacy and fairness are part of the platform design</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <h2 id="contact">Contact</h2>
-            <p>
-              Email: <a href="mailto:selfdirectconnect@outlook.com">selfdirectconnect@outlook.com</a>
-            </p>
-          </section>
+        <div class="hero-points" aria-label="Platform goals">
+          <div class="point"><strong>01</strong>Understand your options</div>
+          <div class="point"><strong>02</strong>Make informed choices</div>
+          <div class="point"><strong>03</strong>Build stronger connections</div>
         </div>
       </div>
-
-      <div class="grid" style="margin-top:18px;">
-        <div class="card">
-          <h2>Advertisers and partners</h2>
-          <p>
-            Targeted reach to families and service professionals, brand safe placement, and launch phase options for partners aligned with the self direction ecosystem.
-          </p>
-          <ul class="list">
-            <li>Focused audience and relevant placement</li>
-            <li>Launch phase partnership options</li>
-            <li>Built for credibility and trust</li>
-          </ul>
+      <div class="hero-art" aria-label="Illustration representing family support and independence">
+        <div class="people-card" aria-hidden="true">
+          <svg viewBox="0 0 420 500" role="img">
+            <circle cx="255" cy="145" r="72" fill="#d9a982"/>
+            <path d="M179 146c14-91 147-112 174-18 8 31 0 58-7 76-13-45-48-85-103-88-20-1-42 7-64 30z" fill="#2c2b2a"/>
+            <rect x="195" y="205" width="135" height="185" rx="65" fill="#f0e6da"/>
+            <circle cx="150" cy="260" r="60" fill="#d8aa85"/>
+            <path d="M92 247c9-56 87-86 126-34 14 19 15 42 12 57-27-31-70-43-138-23z" fill="#6b4a35"/>
+            <rect x="82" y="310" width="145" height="150" rx="68" fill="#567b68"/>
+            <circle cx="129" cy="258" r="7" fill="#2d2d2d"/><circle cx="169" cy="258" r="7" fill="#2d2d2d"/>
+            <path d="M126 282c14 13 35 13 50 0" stroke="#7c4e3b" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M224 162c12 10 31 10 44 0" stroke="#7c4e3b" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M278 290c-41 53-76 78-129 77" stroke="#d9a982" stroke-width="24" fill="none" stroke-linecap="round"/>
+          </svg>
         </div>
-
-        <div class="card">
-          <h2>What happens next</h2>
-          <p>
-            We are building the core structure first, then filling in the education and directory sections in phases.
-          </p>
-          <ul class="list">
-            <li>Page structure and navigation</li>
-            <li>Audience pages with clear explanations</li>
-            <li>Broker opt in onboarding approach</li>
-            <li>Launch phase growth through partnerships</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer">
-        <div>© <span id="year"></span> SelfDirectConnect</div>
-        <div class="links">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </div>
+        <div class="quote-badge"><div><span>♡</span>Empowering families.<br>Supporting independence.</div></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <section class="benefits" id="resources" aria-label="What SelfDirectConnect provides">
+    <div class="container benefit-grid">
+      <article class="benefit"><div class="benefit-icon" aria-hidden="true">⌕</div><h3>Find Trusted Connections</h3><p>Explore structured Support Broker information as the directory grows.</p></article>
+      <article class="benefit"><div class="benefit-icon" aria-hidden="true">✓</div><h3>Make Informed Choices</h3><p>Use clear information and practical questions to understand fit.</p></article>
+      <article class="benefit"><div class="benefit-icon" aria-hidden="true">▤</div><h3>Learn & Empower</h3><p>Access plain language resources designed to make Self Direction easier to navigate.</p></article>
+      <article class="benefit"><div class="benefit-icon" aria-hidden="true">♡</div><h3>Build Community</h3><p>Strengthen connections among families, self advocates, professionals, and partners.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-title"><h2>How SelfDirectConnect Works</h2><p>A simple starting point for a system that can otherwise feel fragmented.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step-number">1</div><div class="step-icon" aria-hidden="true">⌕</div><h3>Learn</h3><p>Understand Self Direction, the role of Support Brokers, and the questions that matter.</p></article>
+        <article class="step"><div class="step-number">2</div><div class="step-icon" aria-hidden="true">★</div><h3>Explore</h3><p>Use structured resources and professional information to identify options that may fit your goals.</p></article>
+        <article class="step"><div class="step-number">3</div><div class="step-icon" aria-hidden="true">●●</div><h3>Connect</h3><p>Take your next step with clearer information and stronger professional connections.</p></article>
+      </div>
+      <div class="about-strip">
+        <div><blockquote>“Self directed. Supported. Empowered.”</blockquote><p>We are building SelfDirectConnect to make the journey easier to understand and easier to navigate.</p></div>
+        <a class="btn btn-secondary" href="how-it-works.html">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="container join-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--gold)">Early access</div>
+        <h2>Help shape the SelfDirectConnect community.</h2>
+        <p>Join the interest list for launch updates, new resources, and early access information tailored to your role.</p>
+        <ul class="join-list">
+          <li>Individuals and families</li>
+          <li>Support Brokers and providers</li>
+          <li>Care managers and referral professionals</li>
+          <li>Community and advertising partners</li>
+        </ul>
+      </div>
+      <div class="form-shell">
+        <h3>Join the SelfDirectConnect interest list</h3>
+        <p>Use the form below to receive launch updates. You can unsubscribe at any time.</p>
+        <div class="ml-embedded" data-form="MW1xcO"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><strong>SelfDirectConnect</strong> · Empowering Choices. Strengthening Futures.</div>
+      <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="participation-standards.html">Participation Standards</a><a href="mailto:selfdirectconnect@outlook.com">Contact</a></div>
+    </div>
+    <div class="fine">SelfDirectConnect is an independent informational and professional connection platform. It is not a government agency and does not replace official OPWDD guidance, care management, legal, medical, financial, or clinical advice. © <span id="year"></span> SelfDirectConnect.</div>
+  </div>
+</footer>
+
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuButton = document.querySelector('.menu-btn');
+  const nav = document.querySelector('nav');
+  menuButton.addEventListener('click', () => {
+    const open = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!open));
+    nav.style.display = open ? 'none' : 'flex';
+    if (!open) {
+      nav.style.position='absolute';nav.style.top='70px';nav.style.left='18px';nav.style.right='18px';nav.style.flexDirection='column';nav.style.alignItems='stretch';nav.style.gap='0';nav.style.background='#fff';nav.style.padding='12px 18px';nav.style.border='1px solid #dce4e0';nav.style.borderRadius='12px';nav.style.boxShadow='0 16px 35px rgba(9,33,61,.16)';
+      nav.querySelectorAll('a').forEach(a=>{a.style.padding='12px 6px';a.style.borderBottom='1px solid #eef2ef'});
+    }
+  });
+</script>
 </body>
 </html>
