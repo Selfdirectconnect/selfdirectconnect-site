@@ -1,135 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About SelfDirectConnect | Mission, Purpose and Independence</title>
-  <meta name="description" content="Learn why SelfDirectConnect exists and how we help individuals with developmental disabilities, families, Support Brokers, and referral partners navigate Self Direction with greater clarity and confidence.">
-  <meta name="theme-color" content="#063b36">
-  <style>
-    :root{--navy:#09213d;--green:#146b57;--green-dark:#064a43;--green-soft:#edf5f0;--gold:#e6b65a;--cream:#fbfaf7;--white:#fff;--text:#152238;--muted:#5e6875;--line:#dce4e0;--shadow:0 18px 50px rgba(9,33,61,.12);--radius:24px;--max:1180px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 36px));margin:0 auto}.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px 14px;z-index:999}.skip:focus{left:12px}:focus-visible{outline:3px solid #f1c665;outline-offset:3px}
-    header{background:rgba(255,255,255,.96);border-bottom:1px solid rgba(9,33,61,.08);position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}.header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--green-soft);color:var(--green);font-size:24px;font-weight:800}.brand-name{font-family:Georgia,"Times New Roman",serif;font-size:27px;font-weight:700;letter-spacing:-.5px;color:var(--navy)}.brand-name span{color:var(--green)}.tagline{display:block;font-size:11px;color:#385267;letter-spacing:.1px;margin-top:-2px}nav{display:flex;align-items:center;gap:24px;font-weight:650;font-size:14px}nav a{padding:28px 0 24px;border-bottom:3px solid transparent}nav a:hover,nav a:focus-visible,nav a[aria-current="page"]{color:var(--green);border-color:var(--green)}.nav-cta{background:var(--green);color:white!important;padding:11px 18px!important;border-radius:8px;border:0!important}.nav-cta:hover{background:var(--green-dark)}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 11px;font-size:18px}
-    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy)}.eyebrow{color:var(--green);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:14px}
-    .hero{background:linear-gradient(115deg,#fff 0%,#f8faf8 48%,#e9f2ec 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;align-items:center}.hero-copy{padding:76px 36px 76px 0}h1{font-size:clamp(46px,5.8vw,72px);line-height:1;letter-spacing:-2px;margin:0 0 24px}.accent{color:var(--green)}.hero-lead{font-size:18px;line-height:1.75;color:#2d3c51;max-width:650px;margin:0 0 30px}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pillar{border-top:1px solid var(--line);padding-top:16px}.pillar strong{display:block;color:var(--green-dark);font-size:16px;margin-bottom:5px}.pillar span{font-size:13px;color:#405064}.hero-art{min-height:620px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 60% 36%,#e0eee4 0 28%,transparent 29%),linear-gradient(145deg,#eaf3ed,#c2dbce)}.hero-art:before{content:"";position:absolute;inset:8% -12% 6% 10%;border:26px solid rgba(20,107,87,.78);border-radius:50%}.people-card{position:relative;z-index:2;width:min(430px,78%);aspect-ratio:4/5;border-radius:48% 48% 18% 18%;background:linear-gradient(160deg,#f3dfc7,#d7ece2 48%,#779f8c);box-shadow:var(--shadow);display:grid;place-items:center;overflow:hidden}.people-card svg{width:86%;height:86%}.quote-card{position:absolute;z-index:3;right:5%;bottom:8%;max-width:285px;background:var(--navy);color:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 12px 28px rgba(0,0,0,.2);font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.35}.quote-card span{color:var(--gold);font-size:30px;display:block;line-height:1}
-    .section{padding:82px 0}.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:start}.story h2,.values h2,.serve h2{font-size:40px;margin:0 0 18px}.story p{color:#3f4c5f;font-size:17px;margin:0 0 18px}.story-callout{margin-top:28px;padding:22px;border-left:5px solid var(--green);background:#f0f6f2;border-radius:0 14px 14px 0;color:#334457}.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.value-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(9,33,61,.06)}.value-icon{width:48px;height:48px;border-radius:50%;background:var(--green-soft);display:grid;place-items:center;color:var(--green);font-size:22px;margin-bottom:14px}.value-card h3{font-size:21px;color:var(--green-dark);margin:0 0 8px}.value-card p{color:#465469;margin:0;font-size:14px}
-    .serve{background:#eef5f0}.serve-head{text-align:center;max-width:760px;margin:0 auto 42px}.serve-head p{color:var(--muted);font-size:17px}.serve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.serve-card{background:#fff;border:1px solid #d3dfd8;border-radius:18px;padding:24px;text-align:center}.serve-card h3{font-family:inherit;font-size:18px;color:var(--green-dark);margin:12px 0 8px}.serve-card p{font-size:14px;color:#4b5b6d;margin:0}.serve-icon{font-size:30px}
-    .independence{background:var(--navy);color:#fff;padding:68px 0}.independence-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}.independence h2{color:#fff;font-size:42px;margin:0 0 14px}.independence p{color:#d8e3eb;font-size:17px;margin:0}.cta-box{background:#fff;color:var(--text);border-radius:18px;padding:26px}.cta-box h3{font-family:inherit;font-size:21px;margin:0 0 8px}.cta-box p{font-size:14px;color:var(--muted);margin:0 0 16px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:9px;border:1.5px solid var(--green);font-weight:750}.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark)}
-    .disclaimer{padding:28px 0;background:#f7f4ee;border-top:1px solid #e5dfd4}.disclaimer p{font-size:13px;color:#586272;margin:0;max-width:980px}
-    footer{background:#063b36;color:#e8f1ef;padding:28px 0 34px}.footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}.fine{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:12px;color:#c9dbd6}
-    @media(max-width:920px){nav{display:none}.menu-btn{display:block}.header-inner{min-height:70px}.tagline{display:none}.hero-grid,.story-grid,.independence-grid{grid-template-columns:1fr}.hero-copy{padding:56px 0}.hero-art{min-height:470px}.values-grid{grid-template-columns:1fr}.serve-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.brand-name{font-size:21px}.brand-mark{width:38px;height:38px}h1{font-size:46px}.pillars{grid-template-columns:1fr}.hero-art{min-height:410px}.quote-card{right:3%;bottom:4%;max-width:220px;font-size:15px}.section{padding:62px 0}.story h2,.values h2,.serve h2,.independence h2{font-size:34px}.serve-grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About SelfDirectConnect | Mission, Purpose and Independence</title>
+<meta name="description" content="Learn why SelfDirectConnect exists and how we help individuals with developmental disabilities, families, Support Brokers, and referral partners navigate Self Direction with greater clarity and confidence.">
+<meta name="theme-color" content="#063c36">
+<style>
+:root{--navy:#0b2747;--green:#0f7b63;--cream:#fbfcfa;--soft:#eef7f2;--text:#18324a;--muted:#536676;--line:#dce8e2;--gold:#e7b85e;--max:1540px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6;overflow-x:hidden}a{text-decoration:none;color:inherit;overflow-wrap:anywhere}.container{width:min(var(--max),calc(100% - 72px));margin:auto}.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:12px;top:12px;background:#fff;color:var(--navy);padding:12px 16px;border-radius:8px;z-index:9999;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}.head{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative}.brand{display:flex;align-items:center;gap:12px;min-width:0}.mark{width:48px;height:48px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--green);font-size:24px;flex:0 0 auto}.brand-name{font-family:Georgia,serif;color:var(--navy);font-size:28px;font-weight:800;line-height:1}.brand-name span{color:var(--green)}.tag{font-size:11px;margin-top:4px;color:#4a6476}nav{display:flex;gap:34px;align-items:center;font-weight:700;font-size:14px}nav a{padding:30px 0 26px;border-bottom:3px solid transparent}nav a:hover,nav a:focus-visible,nav a[aria-current="page"]{color:var(--green);border-bottom-color:var(--green)}.join-top{background:var(--green);color:#fff!important;padding:12px 22px!important;border-radius:8px;border:0!important}.menu{display:none;background:#fff;border:1px solid var(--line);padding:10px 13px;border-radius:8px;font-size:18px;color:var(--navy);cursor:pointer;min-width:44px;min-height:44px;flex:0 0 auto}
+:focus-visible{outline:3px solid #f0bd59;outline-offset:3px}h1,h2,h3{font-family:Georgia,serif;color:var(--navy)}.hero{background:linear-gradient(112deg,#fff 0 48%,#edf7f2 100%);padding:86px 0 80px}.hero-inner{max-width:1050px}.eyebrow{font-size:14px;text-transform:uppercase;letter-spacing:1.7px;font-weight:850;color:var(--green);margin-bottom:18px}.hero h1{font-size:clamp(48px,5.5vw,78px);line-height:1.03;letter-spacing:-2px;margin:0 0 25px}.hero h1 span{color:var(--green)}.lead{font-size:20px;line-height:1.65;max-width:900px;margin:0}.hero-note{margin-top:30px;padding-left:20px;border-left:4px solid var(--green);font-weight:750;color:#355264;line-height:1.6;max-width:880px}
+.story{padding:76px 0;background:#fff}.story-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}.story h2{font-size:42px;line-height:1.12;margin:0}.story-copy p{font-size:17px;line-height:1.72;color:#40576a;margin:0 0 18px}.story-copy p:last-child{margin-bottom:0}.story-callout{margin-top:25px;padding:20px 22px;background:var(--soft);border-left:4px solid var(--green);border-radius:0 12px 12px 0;color:#40576a}
+.mission{padding:78px 0;background:var(--soft)}.section-title{text-align:center;max-width:880px;margin:0 auto 48px}.section-title h2{font-size:42px;margin:0 0 13px}.section-title p{font-size:17px;color:var(--muted);line-height:1.65;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #d4e5dc;border-radius:16px;padding:28px 26px;min-height:245px}.icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#dfeee5;color:var(--green);font-weight:900;margin-bottom:18px}.card h3{font-size:23px;color:var(--green);margin:0 0 10px}.card p{margin:0;color:#425a6a;line-height:1.62}
+.serve{padding:78px 0;background:#fff}.serve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.serve-card{border:1px solid var(--line);border-radius:16px;padding:26px;background:#fbfdfc}.serve-card h3{font-size:21px;color:var(--green);margin:0 0 10px}.serve-card p{margin:0;color:#455c6c;line-height:1.6}
+.boundary{background:var(--navy);color:#fff;padding:72px 0}.boundary-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}.boundary h2{color:#fff;font-size:40px;margin:0 0 15px}.boundary p{color:#d9e4ec;font-size:17px;line-height:1.65}.checks{display:grid;gap:15px}.check{display:flex;gap:13px;line-height:1.58;color:#eef4f7}.check span{color:var(--gold);font-weight:900;font-size:19px}.disclaimer{margin-top:28px;border-top:1px solid rgba(255,255,255,.2);padding-top:22px;color:#cbdbe4;font-size:14px;line-height:1.65}
+.next{padding:72px 0;background:#fff;text-align:center}.next h2{font-size:40px;margin:0 0 13px}.next p{max-width:760px;margin:0 auto 27px;color:var(--muted);font-size:17px;line-height:1.65}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 25px;border-radius:9px;border:1.5px solid var(--green);font-weight:800}.primary{background:var(--green);color:#fff}
+footer{background:#063c36;color:#e6f1ee;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap}.footlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}.legal{font-size:12px;color:#c7dbd5;margin-top:17px;padding-top:17px;border-top:1px solid rgba(255,255,255,.18)}
+@media(max-width:1050px){nav{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:150;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;box-shadow:0 14px 30px rgba(11,39,71,.14);padding:10px 18px 18px;flex-direction:column;align-items:stretch;gap:0;max-height:calc(100vh - 84px);overflow-y:auto;overflow-x:hidden}nav.open{display:flex}nav a{display:block;width:100%;padding:15px 6px;border-bottom:1px solid var(--line);white-space:normal}nav a:last-child{border-bottom:0}.join-top{margin-top:10px;text-align:center;padding:14px 18px!important}.menu{display:block}.story-grid,.boundary-grid{grid-template-columns:1fr;gap:30px}.cards{grid-template-columns:1fr 1fr}.serve-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1051px){nav{display:flex!important}}
+@media(max-width:640px){.container{width:min(100% - 32px,var(--max))}.brand-name{font-size:21px}.tag{display:none}.hero{padding:58px 0}.hero h1{font-size:46px}.story,.mission,.serve,.boundary,.next{padding:55px 0}.story h2,.section-title h2,.boundary h2,.next h2{font-size:34px}.cards,.serve-grid{grid-template-columns:1fr}.card{min-height:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(forced-colors:active){.join-top,.primary{border:2px solid ButtonText}.card,.serve-card{border:1px solid CanvasText}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header>
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="SelfDirectConnect home">
-      <div class="brand-mark" aria-hidden="true">♡</div>
-      <div><div class="brand-name">Self<span>Direct</span>Connect</div><span class="tagline">Unlocking Independence, Empowering Choices</span></div>
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="families.html">Families</a>
-      <a href="brokers.html">For Brokers</a>
-      <a href="index.html#resources">Resources</a>
-      <a href="about.html" aria-current="page">About</a>
-      <a class="nav-cta" href="index.html#join">Join Early Access</a>
-    </nav>
-    <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
-  </div>
+<div class="container head">
+<a class="brand" href="index.html" aria-label="SelfDirectConnect home"><div class="mark" aria-hidden="true">♥</div><div><div class="brand-name">Self<span>Direct</span>Connect</div><div class="tag">Resources. Connections. More Independence.</div></div></a>
+<nav id="primary-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="families.html">Individuals &amp; Families</a><a href="brokers.html">For Brokers</a><a href="resources.html">Resources</a><a href="about.html" aria-current="page">About</a><a class="join-top" href="index.html#join">Join Early Access</a></nav>
+<button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">☰</button>
+</div>
 </header>
-
 <main id="main">
-  <section class="hero" aria-labelledby="about-title">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">About SelfDirectConnect</div>
-        <h1 id="about-title">Our Mission. Our Purpose.<br><span class="accent">Your Independence.</span></h1>
-        <p class="hero-lead">SelfDirectConnect was created to make Self Direction easier to understand, easier to navigate, and easier to connect within. We bring education, practical resources, and professional connections together so individuals and families can move forward with greater clarity and confidence.</p>
-        <div class="pillars" aria-label="Our three pillars">
-          <div class="pillar"><strong>Learn</strong><span>Understand Self Direction and your options.</span></div>
-          <div class="pillar"><strong>Connect</strong><span>Find professional connections and practical resources.</span></div>
-          <div class="pillar"><strong>Empower</strong><span>Make informed choices with greater confidence.</span></div>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="Illustration representing family support, dignity and independence">
-        <div class="people-card" aria-hidden="true">
-          <svg viewBox="0 0 420 500">
-            <circle cx="260" cy="142" r="70" fill="#d8aa85"/>
-            <path d="M188 144c18-92 145-106 171-18 10 34 1 67-8 83-17-47-51-84-101-89-24-2-44 7-62 24z" fill="#3a302d"/>
-            <rect x="202" y="207" width="137" height="185" rx="66" fill="#eee1d4"/>
-            <circle cx="146" cy="267" r="59" fill="#d5aa88"/>
-            <path d="M90 250c13-61 92-80 128-31 13 18 14 41 10 56-30-28-70-39-138-25z" fill="#6b4a35"/>
-            <rect x="78" y="316" width="151" height="145" rx="70" fill="#567b68"/>
-            <circle cx="126" cy="265" r="7" fill="#2d2d2d"/><circle cx="165" cy="265" r="7" fill="#2d2d2d"/>
-            <path d="M125 290c15 13 36 13 50 0" fill="none" stroke="#7b4d45" stroke-width="5" stroke-linecap="round"/>
-            <path d="M214 317c-22 38-49 58-80 66" fill="none" stroke="#d8aa85" stroke-width="26" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="quote-card"><span>“</span>A better tomorrow starts with the right connections today.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="story-title">
-    <div class="container story-grid">
-      <div class="story">
-        <div class="eyebrow">Our Story</div>
-        <h2 id="story-title">Why SelfDirectConnect exists</h2>
-        <p>Self Direction can offer meaningful choice and control, but the experience of navigating it is often fragmented. Individuals and families may have to piece together information from different sources while trying to understand roles, processes, and professional options.</p>
-        <p>SelfDirectConnect was created to organize that experience. Our goal is to provide one accessible place where people can learn, prepare, discover resources, and connect with professionals who participate in the Self Direction ecosystem.</p>
-        <div class="story-callout"><strong>We are building infrastructure for clarity.</strong><br>SelfDirectConnect is designed to support informed choice, not replace the role of OPWDD, care managers, Support Brokers, fiscal intermediaries, or other qualified professionals.</div>
-      </div>
-      <div class="values">
-        <div class="eyebrow">Our Core Values</div>
-        <h2>How we want to build</h2>
-        <div class="values-grid">
-          <article class="value-card"><div class="value-icon" aria-hidden="true">♡</div><h3>Compassion</h3><p>We design with empathy for the real people and families navigating complicated systems and important life decisions.</p></article>
-          <article class="value-card"><div class="value-icon" aria-hidden="true">✓</div><h3>Integrity</h3><p>We aim for responsible transparency, clear participation standards, and accurate representation of what the platform can and cannot do.</p></article>
-          <article class="value-card"><div class="value-icon" aria-hidden="true">★</div><h3>Empowerment</h3><p>We want people to have clearer information and stronger connections so they can make informed choices for themselves.</p></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section serve" aria-labelledby="serve-title">
-    <div class="container">
-      <div class="serve-head"><div class="eyebrow">Who We Serve</div><h2 id="serve-title">Built for the Self Direction community</h2><p>SelfDirectConnect is being designed around the people who need to understand, navigate, support, and strengthen Self Direction.</p></div>
-      <div class="serve-grid">
-        <article class="serve-card"><div class="serve-icon" aria-hidden="true">♿</div><h3>Self Advocates</h3><p>People seeking greater choice, control, and understanding within their own Self Direction journey.</p></article>
-        <article class="serve-card"><div class="serve-icon" aria-hidden="true">⌂</div><h3>Families</h3><p>Parents and family members looking for clear guidance, practical tools, and professional connections.</p></article>
-        <article class="serve-card"><div class="serve-icon" aria-hidden="true">◆</div><h3>Support Brokers</h3><p>Professionals seeking a structured way to present their experience, services, and availability.</p></article>
-        <article class="serve-card"><div class="serve-icon" aria-hidden="true">↗</div><h3>Referral Partners</h3><p>Care managers and aligned professionals who need organized information and dependable connection pathways.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="independence" aria-labelledby="independence-title">
-    <div class="container independence-grid">
-      <div><div class="eyebrow" style="color:#e6b65a">Our Vision</div><h2 id="independence-title">A clearer Self Direction experience can support stronger independence.</h2><p>We are starting in New York and building deliberately. As the community grows, SelfDirectConnect can expand its educational tools, professional directory, referral resources, and partnerships while keeping accessibility and responsible growth at the center.</p></div>
-      <div class="cta-box"><h3>Find your next step</h3><p>Whether you are navigating Self Direction for yourself, supporting a family member, or participating professionally, start with the path that fits you.</p><a class="btn btn-primary" href="index.html#join">Join Early Access</a></div>
-    </div>
-  </section>
-
-  <section class="disclaimer" aria-label="Platform independence notice">
-    <div class="container"><p><strong>Independent platform notice:</strong> SelfDirectConnect is an independent informational and connection platform. It is not an OPWDD agency and does not replace official guidance, professional advice, eligibility determinations, care management, brokerage services, or other services delivered by authorized professionals or government agencies.</p></div>
-  </section>
+<section class="hero" aria-labelledby="about-title"><div class="container"><div class="hero-inner"><div class="eyebrow">About SelfDirectConnect</div><h1 id="about-title">Our Mission. Our Purpose.<br><span>Your Independence.</span></h1><p class="lead">SelfDirectConnect was created to make Self Direction easier to understand, easier to navigate, and easier to connect within. We bring education, practical resources, and professional connections together so individuals and families can move forward with greater clarity and confidence.</p><div class="hero-note">SelfDirectConnect is designed to support informed choice while keeping individuals with disabilities at the center of decisions about their own lives.</div></div></div></section>
+<section class="story" aria-labelledby="story-title"><div class="container story-grid"><div><div class="eyebrow">Our Story</div><h2 id="story-title">Why SelfDirectConnect Exists</h2></div><div class="story-copy"><p>Self Direction can offer meaningful choice and control, but navigating it can feel fragmented. Individuals, Self Advocates, and families may have to piece together information from different places while trying to understand roles, processes, and professional options.</p><p>SelfDirectConnect was created to organize that experience. Our goal is to provide one accessible place where people can learn, prepare, discover resources, and connect with professionals who participate in the Self Direction community.</p><div class="story-callout"><strong>We are building for clarity, connection, and informed choice.</strong> SelfDirectConnect is not designed to replace OPWDD, Care Managers, Support Brokers, Fiscal Intermediaries, or other qualified professionals.</div></div></div></section>
+<section class="mission" aria-labelledby="mission-title"><div class="container"><div class="section-title"><h2 id="mission-title">What Guides Our Work</h2><p>SelfDirectConnect is being built around values that support dignity, access, independence, and responsible professional connection.</p></div><div class="cards"><article class="card"><div class="icon" aria-hidden="true">01</div><h3>Accessible Information</h3><p>We aim to make important information easier to understand, navigate, enlarge, and use with assistive technology.</p></article><article class="card"><div class="icon" aria-hidden="true">02</div><h3>Informed Choice</h3><p>People should have clearer information and stronger connections so they can make decisions that reflect their own goals and preferences.</p></article><article class="card"><div class="icon" aria-hidden="true">03</div><h3>Responsible Connection</h3><p>Professional visibility should be built around accurate information, clear participation standards, and transparency about what the platform can and cannot do.</p></article></div></div></section>
+<section class="serve" aria-labelledby="serve-title"><div class="container"><div class="section-title"><h2 id="serve-title">Who We Serve</h2><p>SelfDirectConnect is designed for the people making Self Direction decisions and the professionals and supporters who help them move forward.</p></div><div class="serve-grid"><article class="serve-card"><h3>Self Advocates &amp; Individuals</h3><p>People directing their own lives who want clearer information, practical resources, and professional connections.</p></article><article class="serve-card"><h3>Families &amp; Supporters</h3><p>Parents, relatives, and trusted supporters helping someone understand options and prepare for next steps.</p></article><article class="serve-card"><h3>Support Brokers</h3><p>Professionals who want to clearly present their experience, services, and availability to the Self Direction community.</p></article><article class="serve-card"><h3>Care Managers &amp; Partners</h3><p>Referral professionals and community partners looking for organized information and useful connections.</p></article></div></div></section>
+<section class="boundary" aria-labelledby="boundary-title"><div class="container boundary-grid"><div><h2 id="boundary-title">Independent Platform. Clear Boundaries.</h2><p>SelfDirectConnect is designed to make information and professional connections easier to find without presenting itself as an official government service or making decisions for users.</p></div><div><div class="checks" role="list"><div class="check" role="listitem"><span aria-hidden="true">✓</span><div>SelfDirectConnect is not an OPWDD agency or official government platform.</div></div><div class="check" role="listitem"><span aria-hidden="true">✓</span><div>We do not determine eligibility, approve services, authorize payments, or replace individualized planning.</div></div><div class="check" role="listitem"><span aria-hidden="true">✓</span><div>Professional listings do not automatically mean endorsement or guarantee a successful service relationship.</div></div><div class="check" role="listitem"><span aria-hidden="true">✓</span><div>Official program requirements should continue to be confirmed through appropriate OPWDD and support channels.</div></div></div><div class="disclaimer">SelfDirectConnect is an independent information and professional connection platform. It does not replace official program guidance, professional advice, or individualized service planning.</div></div></div></section>
+<section class="next" aria-labelledby="next-title"><div class="container"><h2 id="next-title">Explore the Platform</h2><p>Learn how SelfDirectConnect works, explore resources, or join early access as we continue building the platform.</p><a class="btn primary" href="how-it-works.html">See How It Works</a></div></section>
 </main>
-
-<footer>
-  <div class="container">
-    <div class="footer-top"><div><strong>SelfDirectConnect</strong><br><span style="font-size:12px">Unlocking Independence, Empowering Choices</span></div><div class="footer-links"><a href="about.html">About</a><a href="participation-standards.html">Participation Standards</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:selfdirectconnect@outlook.com">Contact</a></div></div>
-    <div class="fine">© <span id="year"></span> SelfDirectConnect. Information on this site is for general educational and connection purposes and is not legal, medical, clinical, benefits, or eligibility advice.</div>
-  </div>
-</footer>
+<footer><div class="container"><div class="foot"><strong>SelfDirectConnect</strong><div class="footlinks"><a href="how-it-works.html">How It Works</a><a href="about.html" aria-current="page">About</a><a href="advertisers.html">Partners &amp; Advertisers</a><a href="participation-standards.html">Participation Standards</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:selfdirectconnect@outlook.com">Contact</a></div></div><div class="legal">SelfDirectConnect is an independent information and professional connection platform. It is not an OPWDD agency and does not replace official program guidance, professional advice, or individualized service planning.</div></div></footer>
 <script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const btn=document.querySelector('.menu-btn');
-  const nav=document.querySelector('nav');
-  btn.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));nav.style.display=open?'none':'flex';nav.style.position='absolute';nav.style.top='70px';nav.style.right='18px';nav.style.flexDirection='column';nav.style.alignItems='stretch';nav.style.background='#fff';nav.style.padding='14px 20px';nav.style.border='1px solid #dce4e0';nav.style.borderRadius='12px';nav.style.boxShadow='0 12px 30px rgba(9,33,61,.15)';});
+const menu=document.querySelector('.menu');const nav=document.querySelector('#primary-nav');
+function setMenu(open){menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'✕':'☰';nav.classList.toggle('open',open);if(open){const firstLink=nav.querySelector('a');if(firstLink)firstLink.focus();}}
+menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(window.innerWidth<=1050)setMenu(false);}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){setMenu(false);menu.focus();}});
+window.addEventListener('resize',()=>{if(window.innerWidth>1050)setMenu(false);});
 </script>
 </body>
 </html>
